@@ -1,4 +1,4 @@
-## Pygame Projects
+# Pygame Projects
 
 
 <b>These are some of the games I have developed using Python and the Pygame library.<br>
