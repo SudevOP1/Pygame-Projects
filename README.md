@@ -1,8 +1,8 @@
 ## Pygame Projects
 
 ```diff
-These are some of the games I have developed using Python and the Pygame library.<br>
-To play these games, follow these steps:
+- These are some of the games I have developed using Python and the Pygame library.<br>
+- To play these games, follow these steps:
 ```
 
 1. Download the project file
