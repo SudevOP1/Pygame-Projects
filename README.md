@@ -1,7 +1,8 @@
 ## Pygame Projects
-These are some games that I created in Python using Pygame / Pygame-ce Library.
-
-To run these:
+```diff
+@@ These are some games that I created in Python using Pygame / Pygame-ce Library.
+To play my games, follow these steps: @@
+```
 1. Download the file
 2. In command prompt run these two prompts:<br>
    `pip install pygame`<br>
