@@ -1,9 +1,8 @@
 ## Pygame Projects
 
-```
+
 - These are some of the games I have developed using Python and the Pygame library.<br>
 - To play these games, follow these steps:
-```
 
 1. Download the project file
 2. Open the command prompt in the directory where the files are located
