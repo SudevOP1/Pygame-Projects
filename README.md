@@ -8,7 +8,7 @@ To play these games, follow these steps:</b>
 2. Open the command prompt in the directory where the files are located
 3. Run the following commands:<br>
    `pip install pygame`<br>
-   `pip install pygame`
+   `pip install pygame-ce`
 4. Locate the game file named `<game_name>.py`
 5. In the command prompt, navigate to the directory containing this file
 6. Run the following command:<br>
