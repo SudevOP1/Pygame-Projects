@@ -20,10 +20,16 @@ python <game_name>.py
 <br>
 
 ## ✨ Game Designs
+#### Monster Shooter
 ![Monster Shooter](https://raw.githubusercontent.com/SudevOP1/Pygame-Projects/main/Monster%20Shooter/Implementation.png)<br>
+#### Monster Shooter
 ![Snake Game](https://raw.githubusercontent.com/SudevOP1/Pygame-Projects/main/Snake%20Game/Implementation.png)<br>
+#### Snake Game
 ![Space Shooter](https://raw.githubusercontent.com/SudevOP1/Pygame-Projects/main/Space%20Shooter/Implementation.png)<br>
+#### Space Shooter
 ![Pong Game](https://raw.githubusercontent.com/SudevOP1/Pygame-Projects/main/Pong%20Game/Implementation.png)<br>
+#### Pong Game
 ![Runner Game](https://raw.githubusercontent.com/SudevOP1/Pygame-Projects/main/Runner%20Game/Implementation.png)<br>
+#### Runner Game
 ![Slide Puzzle](https://raw.githubusercontent.com/SudevOP1/Pygame-Projects/main/Slide%20Puzzle/Implementation.png)<br>
 <br>
