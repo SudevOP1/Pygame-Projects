@@ -123,25 +123,25 @@ class Game:
             # reset player pos to spawn
             for obj in load_pygame(join('..', 'data', 'maps', 'world.tmx')).get_layer_by_name('Entities'):
                 if obj.name == 'Player':
-                    self.player.rect = self.player.image.get_frect(center = (obj.x,obj.y))
+                    self.player.rect = self.player.image.get_rect(center = (obj.x,obj.y))
                     self.player.hitbox_rect = self.player.rect.inflate(-60, -90)
             # set main_menu to true
             self.main_menu = True
 
     def display_main_menu(self):
         # Play button text
-        self.play_text_surf     = self.game_font_40.render("Play", antialias=True, color="white")
+        self.play_text_surf     = self.game_font_40.render("Play", True, "white")
         self.play_text_rect     = self.play_text_surf.get_rect(center=(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2 - 60))
-        self.play_text_bg_rect  = pygame.Surface((self.play_text_rect.right-self.play_text_rect.left, self.play_text_rect.bottom-self.play_text_rect.top)).get_frect(center=self.play_text_rect.center)
+        self.play_text_bg_rect  = pygame.Surface((self.play_text_rect.right-self.play_text_rect.left, self.play_text_rect.bottom-self.play_text_rect.top)).get_rect(center=self.play_text_rect.center)
         # Quit button text
-        self.quit_text_surf     = self.game_font_40.render("Quit", antialias=True, color="white")
+        self.quit_text_surf     = self.game_font_40.render("Quit", True, "white")
         self.quit_text_rect     = self.quit_text_surf.get_rect(center=(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2 + 20))
-        self.quit_text_bg_rect  = pygame.Surface((self.quit_text_rect.right-self.quit_text_rect.left, self.quit_text_rect.bottom-self.quit_text_rect.top)).get_frect(center=self.quit_text_rect.center)
+        self.quit_text_bg_rect  = pygame.Surface((self.quit_text_rect.right-self.quit_text_rect.left, self.quit_text_rect.bottom-self.quit_text_rect.top)).get_rect(center=self.quit_text_rect.center)
         # Music button text
         music_button_text       = "Music: ON" if self.music_toggle else "Music: OFF"
-        self.music_text_surf    = self.game_font_40.render(music_button_text, antialias=True, color="white")
+        self.music_text_surf    = self.game_font_40.render(music_button_text, True, "white")
         self.music_text_rect    = self.music_text_surf.get_rect(center=(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2 - 60))
-        self.music_text_bg_rect = pygame.Surface((self.music_text_rect.right-self.music_text_rect.left, self.music_text_rect.bottom-self.music_text_rect.top)).get_frect(center=self.music_text_rect.center)
+        self.music_text_bg_rect = pygame.Surface((self.music_text_rect.right-self.music_text_rect.left, self.music_text_rect.bottom-self.music_text_rect.top)).get_rect(center=self.music_text_rect.center)
         # Sound button text
         # Bg
         self.display_surface.blit(self.bg_image, (0, 0))

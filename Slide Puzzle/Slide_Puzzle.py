@@ -104,22 +104,22 @@ class Game:
         # Time Surfs & Rects
         time_text_surf = self.game_font_30.render(f"Time: {self.time}", True, COLORS["text"])
         time_bg_surf   = pygame.Surface(pygame.Vector2(200,self.game_font_30.get_height()+20))
-        time_bg_rect   = time_bg_surf.get_frect(bottomright = pygame.Vector2(WINDOW_WIDTH-20,WINDOW_HEIGHT-20))
-        time_text_rect = time_text_surf.get_frect(center = time_bg_rect.center)
+        time_bg_rect   = time_bg_surf.get_rect(bottomright = pygame.Vector2(WINDOW_WIDTH-20,WINDOW_HEIGHT-20))
+        time_text_rect = time_text_surf.get_rect(center = time_bg_rect.center)
         time_bg_surf.fill(COLORS["text bg"])
 
         # New Game Button Surfs & Rects
         new_game_text_surf    = self.game_font_30.render("New Game", True, COLORS["text"])
         new_game_bg_surf      = time_bg_surf.copy()
-        self.new_game_bg_rect = new_game_bg_surf.get_frect(bottomright = time_bg_rect.topright-pygame.Vector2(0,20))
-        new_game_text_rect    = new_game_text_surf.get_frect(center = self.new_game_bg_rect.center)
+        self.new_game_bg_rect = new_game_bg_surf.get_rect(bottomright = time_bg_rect.topright-pygame.Vector2(0,20))
+        new_game_text_rect    = new_game_text_surf.get_rect(center = self.new_game_bg_rect.center)
         new_game_bg_surf.fill(COLORS["text bg"])
 
         # Solve Button Surfs & Rects
         solve_text_surf = self.game_font_30.render("Solve", True, COLORS["text"])
         solve_bg_surf   = new_game_bg_surf.copy()
-        self.solve_bg_rect   = solve_bg_surf.get_frect(bottomright = self.new_game_bg_rect.topright-pygame.Vector2(0,20))
-        solve_text_rect = solve_text_surf.get_frect(center = self.solve_bg_rect.center)
+        self.solve_bg_rect   = solve_bg_surf.get_rect(bottomright = self.new_game_bg_rect.topright-pygame.Vector2(0,20))
+        solve_text_rect = solve_text_surf.get_rect(center = self.solve_bg_rect.center)
         solve_bg_surf.fill(COLORS["text bg"])
 
         # Display time and buttons
@@ -167,9 +167,9 @@ class Game:
 
         # Best time Surfs & Rects
         best_time_text_surf = self.game_font_30.render(f"Best Time: {self.best_time}", True, COLORS["text"])
-        best_time_text_rect = best_time_text_surf.get_frect()
+        best_time_text_rect = best_time_text_surf.get_rect()
         best_time_bg_surf   = pygame.Surface(pygame.Vector2(best_time_text_rect.right-best_time_text_rect.left+20,best_time_text_rect.bottom-best_time_text_rect.top+20))
-        best_time_bg_rect   = best_time_bg_surf.get_frect(topright = pygame.Vector2(WINDOW_WIDTH-20,20))
+        best_time_bg_rect   = best_time_bg_surf.get_rect(topright = pygame.Vector2(WINDOW_WIDTH-20,20))
         best_time_text_rect.center = best_time_bg_rect.center
         best_time_bg_surf.fill(COLORS["text bg"])
 

@@ -32,12 +32,12 @@ class Game(pygame.sprite.Sprite):
 
         # Player Score
         player_score_surf = self.game_font_160.render(str(self.score["player"]), True, COLORS["bg detail"])
-        player_score_rect = player_score_surf.get_frect(center = (WINDOW_WIDTH/2 + 100, WINDOW_HEIGHT/2))
+        player_score_rect = player_score_surf.get_rect(center = (WINDOW_WIDTH/2 + 100, WINDOW_HEIGHT/2))
         self.display_surface.blit(player_score_surf, player_score_rect)
 
         # Opponent Score
         opponent_score_surf = self.game_font_160.render(str(self.score["opponent"]), True, COLORS["bg detail"])
-        opponent_score_rect = opponent_score_surf.get_frect(center = (WINDOW_WIDTH/2 - 100, WINDOW_HEIGHT/2))
+        opponent_score_rect = opponent_score_surf.get_rect(center = (WINDOW_WIDTH/2 - 100, WINDOW_HEIGHT/2))
         self.display_surface.blit(opponent_score_surf, opponent_score_rect)
 
         # Line

@@ -8,10 +8,10 @@ class Paddle(pygame.sprite.Sprite):
 
         # Image
         self.image = pygame.Surface(SIZE["paddle"], pygame.SRCALPHA)
-        pygame.draw.rect(self.image, COLORS["paddle"], pygame.FRect((0,0), SIZE["paddle"]), 0, 4)
+        pygame.draw.rect(self.image, COLORS["paddle"], pygame.Rect((0,0), SIZE["paddle"]), 0, 4)
 
         # Rect & Movement
-        self.rect = self.image.get_frect(center = POS["player"])
+        self.rect = self.image.get_rect(center = POS["player"])
         self.old_rect = self.rect.copy()
         self.direction = 0
 
@@ -58,7 +58,7 @@ class Ball(pygame.sprite.Sprite):
         pygame.draw.circle(self.image, COLORS["ball"], (SIZE["ball"][0]/2, SIZE["ball"][1]/2), SIZE["ball"][0]/2)
 
         # Rect & Movement
-        self.rect = self.image.get_frect(center = (WINDOW_WIDTH/2, WINDOW_HEIGHT/2))
+        self.rect = self.image.get_rect(center = (WINDOW_WIDTH/2, WINDOW_HEIGHT/2))
         self.old_rect = self.rect.copy()
         self.direction = pygame.Vector2(choice((-1,1)), uniform(0.7, 0.8) * choice((-1,1)))
         self.speed = SPEED["ball"]

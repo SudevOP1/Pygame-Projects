@@ -14,7 +14,7 @@ class Player(pygame.sprite.Sprite):
 
         # Images
         self.image = pygame.image.load(join("images", "player.png")).convert_alpha()
-        self.rect = self.image.get_frect(center = (WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2))
+        self.rect = self.image.get_rect(center = (WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2))
 
         # Movement
         self.direction = pygame.math.Vector2(1, 1)
@@ -63,7 +63,7 @@ class Star(pygame.sprite.Sprite):
     def __init__(self, groups, star_image):
         super().__init__(groups)
         self.image = star_image
-        self.rect = self.image.get_frect(center = (randint(0, WINDOW_WIDTH), randint(0, WINDOW_HEIGHT)))
+        self.rect = self.image.get_rect(center = (randint(0, WINDOW_WIDTH), randint(0, WINDOW_HEIGHT)))
         self.can_move = True
 
 class Laser(pygame.sprite.Sprite):
@@ -71,7 +71,7 @@ class Laser(pygame.sprite.Sprite):
     def __init__(self, laser_image, pos, groups):
         super().__init__(groups)
         self.image = laser_image
-        self.rect = self.image.get_frect(midbottom = pos)
+        self.rect = self.image.get_rect(midbottom = pos)
         self.speed = 1000
         self.can_move = True
         self.mask = pygame.mask.from_surface(self.image)
@@ -86,7 +86,7 @@ class Meteor(pygame.sprite.Sprite):
     def __init__(self, meteor_image, groups):
         super().__init__(groups)
         self.og_image = self.image = meteor_image
-        self.rect = self.image.get_frect(midbottom = (randint(0, WINDOW_WIDTH), -10))
+        self.rect = self.image.get_rect(midbottom = (randint(0, WINDOW_WIDTH), -10))
         self.direction = pygame.Vector2(uniform(-0.5, 0.5), 1)
         self.speed = randint(400, 500)
         self.can_move = True
@@ -104,7 +104,7 @@ class Meteor(pygame.sprite.Sprite):
             # Rotation
             self.rotation += self.rotation_speed * dt
             self.image = pygame.transform.rotozoom(self.og_image, self.rotation, 1)
-            self.rect = self.image.get_frect(center = self.rect.center)
+            self.rect = self.image.get_rect(center = self.rect.center)
         
             # Kill
             if self.rect.top > WINDOW_HEIGHT: self.kill()
@@ -116,7 +116,7 @@ class Explosion(pygame.sprite.Sprite):
         self.frames       = frames
         self.frame_index  = 0
         self.image        = self.frames[int(self.frame_index)]
-        self.rect         = self.image.get_frect(center = pos)
+        self.rect         = self.image.get_rect(center = pos)
         self.can_move     = True
         
     def update(self, dt):
@@ -132,7 +132,7 @@ def display_score(last_restart_time):
     # Score Text
     score = str((pygame.time.get_ticks() - last_restart_time) // 1000)
     score_surf = game_font_40.render(score, True, "white")
-    score_rect = score_surf.get_frect(midbottom = (WINDOW_WIDTH/2, WINDOW_HEIGHT-50))
+    score_rect = score_surf.get_rect(midbottom = (WINDOW_WIDTH/2, WINDOW_HEIGHT-50))
     display_surface.blit(score_surf, score_rect)
 
     # Design around Text
@@ -212,10 +212,10 @@ oscillation_time      = 0
 last_restart_time     = 0
 game_title_text_surf  = game_font_90.render("MONSTER SHOOTER", True, "white")
 press_space_text_surf = game_font_50.render("Press SPACE to Start", True, "white")
-game_title_text_rect  = game_title_text_surf .get_frect(midtop    = ((WINDOW_WIDTH/2), 130))
-press_space_text_rect = press_space_text_surf.get_frect(midbottom = ((WINDOW_WIDTH/2), (WINDOW_HEIGHT) - 10))
+game_title_text_rect  = game_title_text_surf .get_rect(midtop    = ((WINDOW_WIDTH/2), 130))
+press_space_text_rect = press_space_text_surf.get_rect(midbottom = ((WINDOW_WIDTH/2), (WINDOW_HEIGHT) - 10))
 game_menu_player_image_surf = pygame.transform.rotozoom(player.image, 0, 1.5)
-game_menu_player_image_rect = game_menu_player_image_surf.get_frect(center = (WINDOW_WIDTH/2, WINDOW_HEIGHT/2))
+game_menu_player_image_rect = game_menu_player_image_surf.get_rect(center = (WINDOW_WIDTH/2, WINDOW_HEIGHT/2))
 
 
 # Run
